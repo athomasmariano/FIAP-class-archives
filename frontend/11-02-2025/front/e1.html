@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Soma de dois numeros</h1>
+    <form id="frmSoma">
+        <input type="number" id="numero1" placeholder="digite o 1° valor" required>
+        <br>
+        <input type="number" id="numero2" placeholder="digite o 2° valor" required>
+        <br>
+        <button type="submit">Somar</button>
+    </form>
+    <div id="resultado"></div>
+    <script>
+        function soma (a,b){
+            return a + b;
+        }
+
+        document.getElementById("frmSoma").addEventListener('submit', function(event){
+            event.preventDefault();// evita o recarregamento
+
+            let num1 = parseFloat(document.getElementById('numero1').value);
+            let num2 = parseFloat(document.getElementById('numero2').value);
+            let resultado = soma(num1,num2);
+
+            document.getElementById('resultado').innerText = `Soma: ${resultado}`;
+        })
+    </script>
+</body>
+
+</html>
